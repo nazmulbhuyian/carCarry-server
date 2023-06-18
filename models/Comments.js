@@ -6,7 +6,6 @@ const commentSchema = new mongoose.Schema({
     name: {
       type: String,
       required: [true, "Name must be required"],
-      trim: true,
       minLength: [3, "At least 3 caracted must be provide"],
       maxLength: [30, "Name is to large"],
       lowercase: true

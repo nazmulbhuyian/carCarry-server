@@ -7,6 +7,7 @@ const jwt = require("jsonwebtoken");
 const connectDB = require("./server");
 
 
+const carsDetailsRoutes = require('./routes/carsDetailsRouters');
 const commentsRoutes = require('./routes/commentsRoutes');
 
 app.use(express.json());
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
 });
 
 
+app.use('/carsDetails', carsDetailsRoutes);
 app.use('/comments', commentsRoutes);
 
 

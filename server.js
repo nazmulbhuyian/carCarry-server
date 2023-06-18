@@ -9,7 +9,6 @@ function connectDB() {
   mongoose
     .connect(uri)
     .then(() => {
-        console.log(uri);
         console.log(`Database connection Successfull`);
     })
     .catch((err) => {
@@ -18,3 +17,5 @@ function connectDB() {
 }
 
 module.exports = connectDB;
+
+
