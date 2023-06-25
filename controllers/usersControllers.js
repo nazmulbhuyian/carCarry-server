@@ -1,0 +1,38 @@
+const { postUsersService, getUsersService } = require("../services/usersServices");
+const bcrypt = require("bcryptjs")
+const saltRounds = 10
+
+
+exports.postUser = async (req, res, next) => {
+    const data = req.body;
+    try {
+        const inserted = await getUsersService(data?.email)
+        if (inserted) {
+            return res.send({ message: 'Previously Added' })
+        }
+
+        bcrypt.hash(data.password, saltRounds, async function (err, hash) {
+            const newUser = {
+                name: data.name,
+                email: data.email,
+                role: data.role,
+                password: hash
+            }
+            const result = await postUsersService(newUser);
+            if (!result) {
+                return res.send('nothing found');
+            }
+            res.status(200).json({
+                status: 'Successfully',
+                data: result
+            })
+        });
+
+    } catch (error) {
+        res.status(400).json({
+            status: 'Failled',
+            message: "Data Post Failed",
+            error: error.message
+        })
+    }
+}

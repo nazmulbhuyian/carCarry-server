@@ -4,6 +4,7 @@ const router = express.Router();
 const commentsControllers = require('../controllers/commentsControllers');
 
 
-router.route('/').get(commentsControllers.getComments)
+router.route('/').post(commentsControllers.postComment)
+router.route('/:name').get(commentsControllers.getComments).delete(commentsControllers.deleteComment)
 
 module.exports = router;

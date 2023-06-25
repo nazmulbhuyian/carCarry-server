@@ -22,7 +22,7 @@ const commentSchema = new mongoose.Schema({
       required: true,
       type: String
     },
-    email: {
+    e_mail: {
       required: true,
       type: String
     },

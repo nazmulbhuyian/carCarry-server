@@ -9,6 +9,11 @@ const connectDB = require("./server");
 
 const carsDetailsRoutes = require('./routes/carsDetailsRouters');
 const commentsRoutes = require('./routes/commentsRoutes');
+const userRoutes = require('./routes//usersRoutes');
+const userLogRoutes = require('./routes/usersLogRoutes');
+const getMeRoutes = require('./routes/getMeRoutes');
+const bookingsRoutes = require('./routes/bookingsRoutes');
+const wishListRoutes = require('./routes/wishListRoutes');
 
 app.use(express.json());
 app.use(cors());
@@ -20,6 +25,11 @@ app.get("/", (req, res) => {
 
 app.use('/carsDetails', carsDetailsRoutes);
 app.use('/comments', commentsRoutes);
+app.use('/usersReg', userRoutes);
+app.use('/usersLog', userLogRoutes);
+app.use('/getMe', getMeRoutes);
+app.use('/bookings', bookingsRoutes);
+app.use('/wishList', wishListRoutes);
 
 
 connectDB();
