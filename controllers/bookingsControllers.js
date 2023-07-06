@@ -3,8 +3,8 @@ const { postBookingsService } = require("../services/bookingsServices");
 
 
 exports.postBookings = async (req, res, next) => {
-    const data = req.body;
     try {
+            const data = req.body;
             const result = await postBookingsService(data);
             if (!result) {
                 return res.send('nothing found');

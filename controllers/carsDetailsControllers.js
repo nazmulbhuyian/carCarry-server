@@ -5,8 +5,9 @@ exports.getCarsDetails = async (req, res, next) => {
     try {
         const filters = { ...req.query };
         const query = filters.page;
+        const email = filters.email
 
-        const result = await getCarsDetailsService(query);
+        const result = await getCarsDetailsService(query, email);
         if (!result) {
             return res.send('nothing found');
         }

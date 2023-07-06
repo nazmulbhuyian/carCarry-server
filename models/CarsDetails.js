@@ -3,6 +3,10 @@ const mongoose = require("mongoose");
 
 // Schema Design
 const carsDetailsSchema = new mongoose.Schema({
+    u_email: {
+        required: true,
+        type: String
+    },
     c_img: {
         required: true,
         type: String
@@ -95,6 +99,10 @@ const carsDetailsSchema = new mongoose.Schema({
     },
     airbag: {
         type: String,
+        required: true
+    },
+    balance: {
+        type: Number,
         required: true
     },
    

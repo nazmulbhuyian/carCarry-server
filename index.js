@@ -14,6 +14,7 @@ const userLogRoutes = require('./routes/usersLogRoutes');
 const getMeRoutes = require('./routes/getMeRoutes');
 const bookingsRoutes = require('./routes/bookingsRoutes');
 const wishListRoutes = require('./routes/wishListRoutes');
+const earningsRoutes = require('./routes/earningsRoutes');
 
 app.use(express.json());
 app.use(cors());
@@ -30,6 +31,7 @@ app.use('/usersLog', userLogRoutes);
 app.use('/getMe', getMeRoutes);
 app.use('/bookings', bookingsRoutes);
 app.use('/wishList', wishListRoutes);
+app.use('/earnings', earningsRoutes);
 
 
 connectDB();
