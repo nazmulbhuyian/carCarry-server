@@ -5,10 +5,7 @@ const mongoose = require("mongoose");
 const usersSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, "Name must be required"],
-        minLength: [3, "At least 3 caracted must be provide"],
-        maxLength: [30, "Name is to large"],
-        lowercase: true
+        required: true,
     },
     email: {
         required: true,
@@ -18,13 +15,17 @@ const usersSchema = new mongoose.Schema({
         required: true,
         type: String
     },
-    // img: {
-    //     required: true,
-    //     type: String
-    // },
+    img: {
+        required: false,
+        type: String
+    },
     password: {
         required: true,
         type: String
+    },
+    balance: {
+        required: true,
+        type: Number
     },
 }, {
     timestamps: true
