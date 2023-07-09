@@ -105,6 +105,10 @@ const carsDetailsSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    points: {
+        type: Number,
+        required: true
+    }
    
 }, {
     timestamps: true
