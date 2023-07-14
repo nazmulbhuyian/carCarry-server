@@ -18,7 +18,8 @@ exports.postUser = async (req, res, next) => {
                 role: data.role,
                 password: hash,
                 balance: data.balance,
-                img: ''
+                img: '',
+                phone: data.phone
             }
             const result = await postUsersService(newUser);
             if (!result) {

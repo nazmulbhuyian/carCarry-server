@@ -9,3 +9,8 @@ exports.postWishListService = async (data) => {
     const wishList = await WishList.create(data);
     return wishList;
 }
+
+exports.getSingleWishListService = async (email) => {
+    const wishList = await WishList.find({u_email: email}).sort({ "_id": -1 });
+    return wishList;
+}

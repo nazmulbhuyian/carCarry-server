@@ -1,11 +1,10 @@
-const { postBookingsService,  getSingleBookingsService, getSingleRequestBookingsService } = require("../services/bookingsServices");
+const { postpublishRidessService, getpublishRidessService } = require("../services/publishRideServices");
 
 
-
-exports.postBookings = async (req, res, next) => {
+exports.postRides = async (req, res, next) => {
     try {
             const data = req.body;
-            const result = await postBookingsService(data);
+            const result = await postpublishRidessService(data);
             if (!result) {
                 return res.send('nothing found');
             }
@@ -23,22 +22,22 @@ exports.postBookings = async (req, res, next) => {
     }
 }
 
-exports.getSingleBookings = async (req, res, next) => {
+exports.getRides = async (req, res, next) => {
     try {
-            const email = req.params.email;
-            const result = await getSingleBookingsService(email);
+            const data = req.params.driver;
+            const result = await getpublishRidessService(data);
             if (!result) {
                 return res.send('nothing found');
             }
             res.status(200).json({
-                status: 'Successfull',
+                status: 'Successfully Added',
                 data: result
             })
 
     } catch (error) {
         res.status(400).json({
             status: 'Failled',
-            message: "Data get Failed",
+            message: "Data Post Failed",
             error: error.message
         })
     }

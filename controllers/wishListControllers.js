@@ -1,4 +1,4 @@
-const { postWishListService, getWishListService } = require("../services/wishListServices");
+const { postWishListService, getWishListService, getSingleWishListService } = require("../services/wishListServices");
 
 
 exports.postWishList = async (req, res, next) => {
@@ -26,6 +26,27 @@ exports.postWishList = async (req, res, next) => {
         res.status(400).json({
             status: 'Failled',
             message: "Data Post Failed",
+            error: error.message
+        })
+    }
+}
+
+exports.GetSingleWishList = async (req, res, next) => {
+    try {
+        const email = req.params.email;
+        const result = await getSingleWishListService(email);
+        if (!result) {
+            return res.send('nothing found');
+        }
+        res.status(200).json({
+            status: 'Successfull',
+            data: result
+        })
+
+    } catch (error) {
+        res.status(400).json({
+            status: 'Failled',
+            message: "Data get Failed",
             error: error.message
         })
     }

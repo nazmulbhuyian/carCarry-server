@@ -14,7 +14,8 @@ exports.getMeUser = async (req, res, next) => {
         res.status(200).json({
             status: 'Successfully',
             email: decode.email,
-            userName:user.name
+            userName:user.name,
+            userPhone: user.phone,
         })
 
     } catch (error) {

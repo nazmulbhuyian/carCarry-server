@@ -27,6 +27,10 @@ const usersSchema = new mongoose.Schema({
         required: true,
         type: Number
     },
+    phone: {
+        required: true,
+        type: String
+    }
 }, {
     timestamps: true
 }

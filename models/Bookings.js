@@ -44,6 +44,10 @@ const bookingsSchema = new mongoose.Schema({
     o_phone: {
         required: true,
         type: String
+    },
+    c_phone: {
+        required: true,
+        type: String
     }
 }, {
     timestamps: true

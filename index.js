@@ -15,6 +15,9 @@ const getMeRoutes = require('./routes/getMeRoutes');
 const bookingsRoutes = require('./routes/bookingsRoutes');
 const wishListRoutes = require('./routes/wishListRoutes');
 const earningsRoutes = require('./routes/earningsRoutes');
+const driverRequestBookingsRoutes = require('./routes/driverRequestBookingsRoutes');
+const driverReqBookRoutes = require('./routes/driverReqBookModalRoutes');
+const publishRidesRoutes = require('./routes/publishRidesRoutes');
 
 app.use(express.json());
 app.use(cors());
@@ -32,6 +35,9 @@ app.use('/getMe', getMeRoutes);
 app.use('/bookings', bookingsRoutes);
 app.use('/wishList', wishListRoutes);
 app.use('/earnings', earningsRoutes);
+app.use('/driverRequestBookings', driverRequestBookingsRoutes);
+app.use('/driverReqBookModal', driverReqBookRoutes);
+app.use('/DriPubRides', publishRidesRoutes);
 
 
 connectDB();
