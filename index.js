@@ -18,6 +18,7 @@ const earningsRoutes = require('./routes/earningsRoutes');
 const driverRequestBookingsRoutes = require('./routes/driverRequestBookingsRoutes');
 const driverReqBookRoutes = require('./routes/driverReqBookModalRoutes');
 const publishRidesRoutes = require('./routes/publishRidesRoutes');
+const publishRidesBookingsRoutes = require('./routes/publishRidesBookingsRoutes');
 
 app.use(express.json());
 app.use(cors());
@@ -29,15 +30,17 @@ app.get("/", (req, res) => {
 
 app.use('/carsDetails', carsDetailsRoutes);
 app.use('/comments', commentsRoutes);
+app.use('/bookings', bookingsRoutes);
 app.use('/usersReg', userRoutes);
 app.use('/usersLog', userLogRoutes);
 app.use('/getMe', getMeRoutes);
-app.use('/bookings', bookingsRoutes);
 app.use('/wishList', wishListRoutes);
 app.use('/earnings', earningsRoutes);
 app.use('/driverRequestBookings', driverRequestBookingsRoutes);
 app.use('/driverReqBookModal', driverReqBookRoutes);
 app.use('/DriPubRides', publishRidesRoutes);
+app.use('/pubRidesBooking', publishRidesBookingsRoutes);
+
 
 
 connectDB();

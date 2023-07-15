@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 // Schema Design
-const publishRidesSchema = new mongoose.Schema({
+const publishRidesBookingsSchema = new mongoose.Schema({
     from: {
         type: String,
         required: true
@@ -11,35 +11,27 @@ const publishRidesSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    img: {
-        type: String,
-        required: true
-    },
-    pub_detail: {
-        type: String,
-        required: true
-    },
-    role: {
-        type: String,
-        required: true
-    },
     date: {
         type: String,
         required: true
     },
-    email: {
+    pub_email: {
         type: String,
         required: true
     },
-    name: {
+    b_email: {
         type: String,
         required: true
     },
-    prize: {
-        type: Number,
+    b_name: {
+        type: String,
         required: true
     },
-    phone: {
+    b_phone: {
+        type: String,
+        required: true
+    },
+    pub_phone: {
         type: String,
         required: true
     }
@@ -51,6 +43,6 @@ const publishRidesSchema = new mongoose.Schema({
 
 
 // Model
-const publishRides = mongoose.model("publishrides", publishRidesSchema);
+const publishRidesBookings = mongoose.model("pubridesbookings", publishRidesBookingsSchema);
 
-module.exports = publishRides;
+module.exports = publishRidesBookings;
