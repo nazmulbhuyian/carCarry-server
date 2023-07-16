@@ -34,6 +34,10 @@ const publishRidesBookingsSchema = new mongoose.Schema({
     pub_phone: {
         type: String,
         required: true
+    },
+    prize: {
+        type: Number,
+        required: true
     }
    
 }, {

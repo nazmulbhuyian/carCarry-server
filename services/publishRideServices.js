@@ -10,6 +10,15 @@ exports.postpublishRidessService = async (data) => {
     }
 }
 
+exports.getpublishAllRidesService = async (email) => {
+    try {
+        const bookings = await publishRides.find({ email: email });
+        return bookings;
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
 exports.getpublishRidessService = async (data) => {
     try {
         if (data == 'driver') {

@@ -101,10 +101,6 @@ const carsDetailsSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    balance: {
-        type: Number,
-        required: true
-    },
     points: {
         type: Number,
         required: true

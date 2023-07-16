@@ -1,4 +1,4 @@
-const { postpublishRidesBookingsService, getpublishRidesBookingsService, getpublishRidesRequestMeBookingsService } = require("../services/publishRidesBookingsServices");
+const { postpublishRidesBookingsService, getpublishRidesBookingsService, getpublishRidesRequestMeBookingsService,  } = require("../services/publishRidesBookingsServices");
 
 exports.postRidesBookings = async (req, res, next) => {
     try {

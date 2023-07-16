@@ -25,7 +25,11 @@ exports.updateCarsService = async (data) => {
     }
 }
 
-exports.getSingleCarsDetailsService = async (query) => {
-    const carsDetails = await CarsDetails.find({ _id: query });
-    return carsDetails;
+exports.getSingleCarsDetailsServices = async (query) => {
+    try {
+        const carsDetails = await CarsDetails.findOne({ _id: query });
+        return carsDetails;
+    } catch (error) {
+        console.log(error);
+    }
 }
