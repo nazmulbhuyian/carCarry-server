@@ -38,6 +38,10 @@ const publishRidesBookingsSchema = new mongoose.Schema({
     prize: {
         type: Number,
         required: true
+    },
+    status: {
+        required: true,
+        type: String
     }
    
 }, {

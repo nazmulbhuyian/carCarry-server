@@ -19,6 +19,10 @@ const earningsSchema = new mongoose.Schema({
         required: true,
         type: String
     },
+    e_ride: {
+        required: true,
+        type: String
+    },
 }, {
     timestamps: true
 }

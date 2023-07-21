@@ -37,6 +37,10 @@ const bookingsSchema = new mongoose.Schema({
         required: true,
         type: String
     },
+    o_email: {
+        required: true,
+        type: String
+    },
     o_id: {
         type: String,
         required: true
@@ -46,6 +50,10 @@ const bookingsSchema = new mongoose.Schema({
         type: String
     },
     c_phone: {
+        required: true,
+        type: String
+    },
+    status: {
         required: true,
         type: String
     }

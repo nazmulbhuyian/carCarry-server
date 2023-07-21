@@ -1,4 +1,4 @@
-const { getLogUsersService, getDriverService, getAdminService } = require("../services/usersLogServices");
+const { getLogUsersService, getDriverService, getAdminService, getUserService } = require("../services/usersLogServices");
 const bcrypt = require("bcryptjs")
 const saltRounds = 10
 const dotenv = require("dotenv").config();
@@ -40,22 +40,40 @@ exports.postLogUser = async (req, res, next) => {
     }
 }
 
-exports.getUserDriver = async (req, res, next) => {
-    const email = req.params.email
-    try {
-        const result = await getDriverService(email);
-        if (!result) {
-            return res.send('nothing found');
-        }
-        res.status(200).send(result)
-    } catch (error) {
-        res.status(400).json({
-            status: 'Failled',
-            message: "Data query Failed",
-            error: error.message
-        })
-    }
-}
+// exports.getUserUser = async (req, res, next) => {
+//     try {
+//         const email = req.params.email;
+//         const result = await getUserService(email);
+//         if (!result) {
+//             return res.send('nothing found');
+//         }
+//         res.status(200).send(result)
+//     } catch (error) {
+//         res.status(400).json({
+//             status: 'Failled',
+//             message: "Data query Failed",
+//             error: error.message
+//         })
+//     }
+// }
+
+// exports.getUserDriver = async (req, res, next) => {
+//     const email = req.params.email
+//     try {
+//         const result = await getDriverService(email);
+//         if (!result) {
+//             return res.send('nothing found');
+//         }
+//         res.status(200).send(result)
+//     } catch (error) {
+//         res.status(400).json({
+//             status: 'Failled',
+//             message: "Data query Failed",
+//             error: error.message
+//         })
+//     }
+// }
+
 
 exports.getUserAdmin = async (req, res, next) => {
     const email = req.params.email
