@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const { promisify } = require("util");
+const dotenv = require("dotenv").config();
 /**
  * 1. check if token exists
  * 2. if not token send res
@@ -9,9 +10,9 @@ const { promisify } = require("util");
 
 module.exports = async (req, res, next) => {
   try {
-    console.log(req.headers?.authorization);
+    // console.log(req.headers?.authorization);
     const token = req.headers?.authorization?.split(" ")?.[1];
-    console.log(token);
+    // console.log(token);
 
     if(!token){
       return res.status(401).json({
@@ -21,7 +22,7 @@ module.exports = async (req, res, next) => {
     }
     
 
-    const decoded = await promisify(jwt.verify)(token, process.env.TOKEN_SECRET);
+    const decoded = await promisify(jwt.verify)(token, process.env.ACCESS_TOKEN);
 
     // const user = User.findOne({ email: decoded.email })
 

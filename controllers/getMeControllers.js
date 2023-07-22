@@ -17,7 +17,8 @@ exports.getMeUser = async (req, res, next) => {
             userName:user.name,
             userPhone: user.phone,
             userBalance: user.balance,
-            userRole: user.role
+            userRole: user.role,
+            userImg: user.img
         })
 
     } catch (error) {
